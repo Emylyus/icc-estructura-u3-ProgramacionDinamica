@@ -1,5 +1,8 @@
 
+import Ejercicios.contorllers.Laberinto;
+import Ejercicios.models.Celda;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 
@@ -32,8 +35,8 @@ public class App {
         System.out.println(
             String.format("Time taken % 9f segundos", (endtime-startime)/1_000_000_000.0));
 
-        /// Ejericio 1
-        // runEjercicio();
+        //Ejericio 1
+        runEjercicio();
 
     }
 
@@ -83,12 +86,27 @@ public class App {
 
     public static void runEjercicio() {
 
-        // boolean[][] grid = {
-        // { true, true, true, true },
-        // { false, false, false, true },
-        // { true, true, false, true },
-        // { true, true, false, true }
-        // };
+        boolean[][] grid = {
+        { true, true, true, true },
+        { false, false, false, true },
+        { true, true, false, true },
+        { true, true, false, true }
+        };
 
+
+        Laberinto laberinto = new Laberinto();
+
+        // Obtener el camino mediante el método getPath
+        List<Celda> path = laberinto.getPath(grid);
+
+        // Imprimir el camino encontrado
+        if (!path.isEmpty()) {
+            System.out.println("Camino encontrado:");
+            for (Celda celda : path) {
+                System.out.println("");
+            }
+        } else {
+            System.out.println("No se encontró un camino válido.");
+        }
     }
 }

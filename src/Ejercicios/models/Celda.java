@@ -1,8 +1,8 @@
 package Ejercicios.models;
 
 public class Celda {
-    int row; // Fila de la celda
-    int col; // Columna de la celda
+    public int row; // Fila de la celda
+    public int col; // Columna de la celda
 
     // Constructor que inicializa una celda con la fila y columna especificadas
     public Celda(int row, int col) {
